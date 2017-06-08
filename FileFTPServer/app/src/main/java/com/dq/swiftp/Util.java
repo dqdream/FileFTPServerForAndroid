@@ -36,8 +36,8 @@ import android.provider.Settings;
 import android.util.Log;
 
 abstract public class Util {
-    private static final String TAG = "FileManager_Util";
-    
+    private static final String TAG = "FtpUtil";
+
 	static MyLog myLog = new MyLog(Util.class.getName());
 	static String getAndroidId() {
 		ContentResolver cr = Globals.getContext().getContentResolver();

@@ -22,7 +22,7 @@ package com.dq.swiftp;
 import android.util.Log;
 
 public class CmdSYST extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdSYST";
+	private static final String TAG = "FtpCmdSYST";
 	// This is considered a safe response to the SYST command, see
 	// http://cr.yp.to/ftp/syst.html
 	public static final String response = "215 UNIX Type: L8\r\n";

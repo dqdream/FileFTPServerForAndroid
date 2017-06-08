@@ -23,8 +23,7 @@ import android.util.Log;
 
 
 public class CmdAPPE extends CmdAbstractStore implements Runnable {
-    private static final String TAG = "CmdAPPE";
-    
+	private static final String TAG = "FtpCmdAPPE";
 	protected String input;
 	
 	public CmdAPPE(SessionThread sessionThread, String input) {

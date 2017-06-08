@@ -6,7 +6,7 @@ import java.io.IOException;
 import android.util.Log;
 
 public class CmdSIZE extends FtpCmd {
-    private static final String TAG = "FileManager_CmdSIZE";
+	private static final String TAG = "FtpCmdSIZE";
 	protected String input;
 	
 	public CmdSIZE(SessionThread sessionThread, String input) {

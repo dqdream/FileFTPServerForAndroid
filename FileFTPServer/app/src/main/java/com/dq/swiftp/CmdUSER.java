@@ -22,7 +22,7 @@ package com.dq.swiftp;
 import android.util.Log;
 
 public class CmdUSER extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdUSER";
+	private static final String TAG = "FtpCmdUSER";
     
 	protected String input;
 	

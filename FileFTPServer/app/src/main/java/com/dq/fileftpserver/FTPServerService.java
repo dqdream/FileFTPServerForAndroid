@@ -20,6 +20,7 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 package com.dq.fileftpserver;
 
 import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -31,8 +32,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.WifiLock;
+import android.os.Build;
 import android.os.IBinder;
 import android.os.PowerManager;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.dq.swiftp.Defaults;
@@ -54,7 +57,7 @@ import java.util.List;
 
 
 public class FTPServerService extends Service implements Runnable {
-    private static final String TAG = "FTPServerService";
+    private static final String TAG = "FtpServerService";
     private static SharedPreferences settings = null;
 
     public static final String WAKE_LOCK_TAG = "SwiFTP";
@@ -232,7 +235,7 @@ public class FTPServerService extends Service implements Runnable {
     private boolean loadSettings() {
         LogUtil.d(TAG, "loadSettings.");
         myLog.l(Log.DEBUG, "Loading settings");
-        settings = getSharedPreferences(Defaults.getSettingsName(), Defaults.getSettingsMode());
+        settings = getSharedPreferences(Defaults.getSettingsName(), Context.MODE_PRIVATE);
         port = settings.getInt("portNum", Defaults.getPortNumber());
         if (port == 0) {
             // If port number from settings is invalid, use the default
@@ -255,33 +258,32 @@ public class FTPServerService extends Service implements Runnable {
     }
 
     private void setupNotification() {
-        // http://developer.android.com/guide/topics/ui/notifiers/notifications.html
-
         // Instantiate a Notification
-        int icon = R.mipmap.ic_launcher;
         CharSequence tickerText = getString(R.string.notif_server_starting);
-        long when = System.currentTimeMillis();
-        Notification notification = new Notification(icon, tickerText, when);
+
+        Notification.Builder builder = new Notification.Builder(this)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setAutoCancel(true)
+                .setContentTitle(tickerText);
 
         // Define Notification's message and Intent
         CharSequence contentTitle = getString(R.string.notif_title);
+        builder.setContentTitle(contentTitle);
         CharSequence contentText = "";
         InetAddress address = FTPServerService.getWifiIp();
         if (address != null) {
             String port = ":" + FTPServerService.getPort();
             contentText = "ftp://" + address.getHostAddress() + (FTPServerService.getPort() == 21 ? "" : port);
         }
-
-        // Gionee <lich><2013-4-22> modify for CR00795969 begin
+        builder.setContentText(contentText);
         Intent notificationIntent = new Intent(this, MainActivity.class);
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-        // Gionee <lich><2013-4-22> modify for CR00795969 end
 
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 //        notification.setLatestEventInfo(getApplicationContext(), contentTitle, contentText, contentIntent);
-        notification.contentIntent=contentIntent;
-        notification.flags |= Notification.FLAG_ONGOING_EVENT;
-
+        builder.setContentIntent(contentIntent);
+        Notification notification=builder.build();
+        notification.flags|= Notification.FLAG_ONGOING_EVENT;
         startForeground(123453, notification);
 
         myLog.d("Notication setup done");

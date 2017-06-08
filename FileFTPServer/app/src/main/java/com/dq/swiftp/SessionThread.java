@@ -326,6 +326,7 @@ public class SessionThread extends Thread {
     }
 
     public void writeString(String str) {
+        Log.d("ftp_vv", str);
         FTPServerService.writeMonitor(false, str);
         byte[] strBytes;
         try {

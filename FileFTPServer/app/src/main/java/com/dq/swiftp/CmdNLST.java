@@ -31,7 +31,7 @@ import java.io.File;
 import android.util.Log;
 
 public class CmdNLST extends CmdAbstractListing implements Runnable {
-    private static final String TAG = "FileManager_CmdNLST";
+	private static final String TAG = "FtpCmdNLST";
     
 	// The approximate number of milliseconds in 6 months
 	public final static long MS_IN_SIX_MONTHS = 6 * 30 * 24 * 60 * 60 * 1000; 

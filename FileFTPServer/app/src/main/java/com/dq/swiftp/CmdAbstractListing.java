@@ -34,8 +34,7 @@ import java.util.List;
 
 
 public abstract class CmdAbstractListing extends FtpCmd {
-    private static final String TAG = "CmdAbstractListing";
-    
+    private static final String TAG = "FtpCmdAbstractListing";
     protected static final MyLog staticLog = new MyLog(CmdLIST.class.toString());
     
     public CmdAbstractListing(SessionThread sessionThread, String input) {

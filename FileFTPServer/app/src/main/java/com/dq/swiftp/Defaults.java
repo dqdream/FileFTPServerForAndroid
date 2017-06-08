@@ -22,6 +22,7 @@ package com.dq.swiftp;
 import java.io.File;
 
 import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 
 public class Defaults {
@@ -42,8 +43,12 @@ public class Defaults {
 //	protected static int ipRetrievalAttempts = 5;
 	public static final int tcpConnectionBacklog = 5;
 	
-    public static final String chrootDir =  "/storage";
-
+    public static final String chrootDir =  getRootDirectory();
+	public static String getRootDirectory() {
+		String sdPath = Environment.getExternalStorageDirectory().getPath();
+		sdPath = (sdPath.split("/"))[1];
+		return "/" + sdPath;
+	}
     public static final boolean acceptWifi = true;
 	public static final boolean acceptNet = false; // don't incur bandwidth charges
 	public static final boolean stayAwake = false;

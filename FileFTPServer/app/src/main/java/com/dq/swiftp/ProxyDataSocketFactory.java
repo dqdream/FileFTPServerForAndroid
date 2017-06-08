@@ -44,7 +44,7 @@ public class ProxyDataSocketFactory extends DataSocketFactory {
      * make a connection to the client's IP & port and then proxy all data between
      * ourself and the FTP client.
      */
-    private static final String TAG = "FileManager_ProxyDataSocketFactory";
+    private static final String TAG = "FtpProxyDataSocket";
     private Socket socket;
     private int proxyListenPort;
     ProxyConnector proxyConnector;

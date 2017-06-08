@@ -20,14 +20,12 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 package com.dq.swiftp;
 
 
-import java.io.File;
-import java.lang.reflect.Constructor;
-
-
 import android.util.Log;
 
+import java.io.File;
+
 public abstract class FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_FtpCmd";
+    private static final String TAG = "FtpCmd";
     protected SessionThread sessionThread;
     protected MyLog myLog;
     protected static final MyLog staticLog = new MyLog(FtpCmd.class.toString());

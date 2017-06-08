@@ -9,6 +9,7 @@
     <string name="description_storage_usb">USB存储器</string>
     <string name="start_server">启动服务</string>
     <string name="stop_server">停止服务</string>
-    <string name="notif_server_starting">远程管理服务已启动</string>
-    <string name="notif_title">远程管理服务正在运行</string>
+    <string name="notif_server_starting">FTP服务已启动</string>
+    <string name="notif_title">FTP服务正在运行</string>
+    <string name="no_wifi_hint">无WLAN网络,点击以查看WLAN设置</string>
 </resources>

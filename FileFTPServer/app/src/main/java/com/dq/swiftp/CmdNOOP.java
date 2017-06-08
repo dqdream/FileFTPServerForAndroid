@@ -23,7 +23,7 @@ import android.util.Log;
 
 
 public class CmdNOOP extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdNOOP";
+	private static final String TAG = "FtpCmdNOOP";
     
 	public static final String message = "TEMPLATE!!"; 
 	

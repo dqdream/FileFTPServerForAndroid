@@ -24,8 +24,7 @@ import java.io.File;
 import android.util.Log;
 
 public class CmdDELE extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdDELE";
-    
+	private static final String TAG = "FtpCmdDELE";
 	protected String input; 
 	
 	public CmdDELE(SessionThread sessionThread, String input) {

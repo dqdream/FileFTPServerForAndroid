@@ -24,8 +24,7 @@ import java.io.File;
 import android.util.Log;
 
 public class CmdMKD extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdMKD";
-    
+	private static final String TAG = "FtpCmdMKD";
 	String input;
 	
 	public CmdMKD(SessionThread sessionThread, String input) {

@@ -26,7 +26,7 @@ import java.net.Socket;
 import android.util.Log;
 import com.dq.fileftpserver.FTPServerService;
 public class TcpListener extends Thread {
-    private static final String TAG = "FileManager_TcpListener";
+	private static final String TAG = "FtpTcpListener";
 	ServerSocket listenSocket;
 	FTPServerService ftpServerService;
 	MyLog myLog = new MyLog(getClass().getName());

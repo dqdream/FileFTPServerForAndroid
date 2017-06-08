@@ -3,6 +3,7 @@ package com.dq.swiftp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
@@ -12,6 +13,7 @@ import android.util.Log;
 import com.dq.fileftpserver.R;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,8 +26,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class DefaultStorageManager {
-
-    private static final String TAG = "DefaultStorageManager";
+    private static final String TAG = "FtpDefaultStorage";
 
     private static final String NOT_PRESENT = "not_present";
 
@@ -215,11 +216,15 @@ public class DefaultStorageManager {
         }
     }
     public String getVolumeState(String mountPoint) {
-        final StorageVolume vol = mStorageManager.getStorageVolume(new File(mountPoint));
-        if (vol != null) {
-            return vol.getState();
-        } else {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return Environment.MEDIA_UNKNOWN;
+        }else{
+            final StorageVolume vol = mStorageManager.getStorageVolume(new File(mountPoint));
+            if (vol != null) {
+                return vol.getState();
+            } else {
+                return Environment.MEDIA_UNKNOWN;
+            }
         }
     }
     private boolean isExternalStorage(Context context, StorageVolume volume) {

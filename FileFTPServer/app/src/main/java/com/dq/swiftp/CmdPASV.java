@@ -24,7 +24,7 @@ import java.net.InetAddress;
 import android.util.Log;
 
 public class CmdPASV extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdPASV";
+	private static final String TAG = "FtpCmdPASV";
     
 	//public static final String message = "TEMPLATE!!";
 	

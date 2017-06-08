@@ -27,7 +27,7 @@ import java.io.IOException;
 import android.util.Log;
 
 public class CmdRETR extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdRETR";
+    private static final String TAG = "FtpCmdRETR";
     
     //public static final String message = "TEMPLATE!!";
     protected String input;

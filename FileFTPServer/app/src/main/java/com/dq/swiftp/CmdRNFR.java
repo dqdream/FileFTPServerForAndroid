@@ -24,7 +24,7 @@ import java.io.File;
 import android.util.Log;
 
 public class CmdRNFR extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdRNFR";
+	private static final String TAG = "FtpCmdRNFR";
     
 	protected String input;
 

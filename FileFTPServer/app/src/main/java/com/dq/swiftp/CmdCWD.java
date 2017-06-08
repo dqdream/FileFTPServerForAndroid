@@ -22,11 +22,13 @@ package com.dq.swiftp;
 import java.io.File;
 import java.io.IOException;
 
+import android.os.Environment;
 import android.util.Log;
 
+import com.dq.fileftpserver.LogUtil;
+
 public class CmdCWD extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdCWD";
-    
+	private static final String TAG = "FtpCmdCWD";
 	protected String input;
 	
 	public CmdCWD(SessionThread sessionThread, String input) {
@@ -41,8 +43,8 @@ public class CmdCWD extends FtpCmd implements Runnable {
 		File newDir;
 		String errString = null;
 		mainblock: {
-			newDir = inputPathToChrootedFile(sessionThread.getWorkingDir(), param);
-
+//			newDir = inputPathToChrootedFile(sessionThread.getWorkingDir(), param);
+			newDir = Environment.getExternalStorageDirectory();
 			// Ensure the new path does not violate the chroot restriction
 			if(violatesChroot(newDir)) {
 				errString = "550 Invalid name or chroot violation\r\n";
@@ -50,7 +52,7 @@ public class CmdCWD extends FtpCmd implements Runnable {
 				myLog.l(Log.INFO, errString);
 				break mainblock;
 			}
-
+			LogUtil.d("ftp_vv",newDir.getAbsolutePath()+","+newDir.canRead()+","+!newDir.isDirectory());
 			try {
 				newDir = newDir.getCanonicalFile();
 				if(!newDir.isDirectory()) {

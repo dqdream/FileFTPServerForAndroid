@@ -25,8 +25,7 @@ import java.io.IOException;
 import android.util.Log;
 
 public class CmdCDUP extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdCDUP";
-    
+	private static final String TAG = "FtpCmdCDUP";
 	protected String input;
 	
 	public CmdCDUP(SessionThread sessionThread, String input) {

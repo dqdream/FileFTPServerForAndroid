@@ -2,6 +2,8 @@ package com.dq.fileftpserver;
 
 import android.app.Application;
 
+import com.dq.swiftp.DefaultStorageManager;
+
 /**
  * Created by Administrator on 2017/6/7.
  */
@@ -18,5 +20,6 @@ public class FTPServerApp extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        DefaultStorageManager.getInstance().updateMountPointList(this);
     }
 }

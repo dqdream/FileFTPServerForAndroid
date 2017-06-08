@@ -33,9 +33,8 @@ import android.util.Log;
 
 
 abstract public class CmdAbstractStore extends FtpCmd {
-    private static final String TAG = "CmdAbstractStore";
-    
-	public static final String message = "TEMPLATE!!"; 
+	private static final String TAG = "FtpCmdAbstractStore";
+	public static final String message = "TEMPLATE!!";
 	
 	public CmdAbstractStore(SessionThread sessionThread, String input) {
 		super(sessionThread, CmdAbstractStore.class.toString());

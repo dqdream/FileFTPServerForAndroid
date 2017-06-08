@@ -29,7 +29,7 @@ import android.util.Log;
 import com.dq.fileftpserver.FTPServerApp;
 
 public class CmdRNTO extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdRNTO";
+	private static final String TAG = "FtpCmdRNTO";
 	protected String input;
 
 	public CmdRNTO(SessionThread sessionThread, String input) {

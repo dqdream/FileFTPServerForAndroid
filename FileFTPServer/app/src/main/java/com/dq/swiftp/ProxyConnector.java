@@ -41,8 +41,7 @@ import android.util.Log;
 
 
 public class ProxyConnector extends Thread {
-    private static final String TAG = "FTP_ProxyConnector";
-    
+	private static final String TAG = "FtpProxyConnector";
 	public static final int IN_BUF_SIZE = 2048;
 	public static final String ENCODING = "UTF-8";
 	public static final int RESPONSE_WAIT_MS = 10000;

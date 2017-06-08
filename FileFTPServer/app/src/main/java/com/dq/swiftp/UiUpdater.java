@@ -26,8 +26,8 @@ import android.os.Handler;
 import android.util.Log;
 
 public class UiUpdater {
-    private static final String TAG = "FileManager_UiUpdater";
-	protected static MyLog myLog = new MyLog("UiUpdater");
+	private static final String TAG = "FtpUiUpdater";
+	protected static MyLog myLog = new MyLog("FtpUiUpdater");
 	protected static final List<Handler> clients = new ArrayList<Handler>();
 	
 	public static void registerClient(Handler client) {
@@ -44,8 +44,6 @@ public class UiUpdater {
 	
 	public static void updateClients() {
 	    Log.d(TAG, "updateClients.");
-		//myLog.l(Log.DEBUG, "UI update");
-		//Log.d("UiUpdate", "Update now");
 		for (Handler client : clients) {
 			client.sendEmptyMessage(0);
 		}

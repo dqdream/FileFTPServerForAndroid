@@ -24,7 +24,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 public class CmdPASS extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdPASS";
+	private static final String TAG = "FtpCmdPASS";
     
 	String input;
 	

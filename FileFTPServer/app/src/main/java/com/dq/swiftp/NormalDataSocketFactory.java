@@ -38,7 +38,7 @@ public class NormalDataSocketFactory extends DataSocketFactory {
 	 * to be proxied through a server out in the cloud.
 	 * 
 	 */
-    private static final String TAG = "NormalDataSocketFactory";
+	private static final String TAG = "FtpNormalDataSocket";
     
 	// Listener socket used for PASV mode
 	ServerSocket server = null;

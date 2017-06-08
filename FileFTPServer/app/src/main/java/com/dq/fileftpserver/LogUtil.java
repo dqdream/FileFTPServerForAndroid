@@ -3,7 +3,7 @@ package com.dq.fileftpserver;
 import android.util.Log;
 
 public class LogUtil {
-    public static String TAG = "vv";
+    public static String TAG = "Ftp";
     private static final boolean LOG_DEBUG = true;
     private static final boolean LOG_INFO = true;
     private static final boolean LOG_ERROR = true;

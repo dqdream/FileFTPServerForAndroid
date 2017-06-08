@@ -23,7 +23,7 @@ import android.util.Log;
 
 
 public class CmdOPTS extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdOPTS";
+    private static final String TAG = "FtpCmdOPTS";
     
     public static final String message = "TEMPLATE!!";
     private String input;

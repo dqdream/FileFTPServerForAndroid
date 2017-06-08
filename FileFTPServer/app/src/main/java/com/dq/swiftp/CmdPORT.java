@@ -25,7 +25,7 @@ import java.net.UnknownHostException;
 import android.util.Log;
 
 public class CmdPORT extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdPORT";
+	private static final String TAG = "FtpCmdPORT";
     
 	//public static final String message = "TEMPLATE!!";
 	String input;

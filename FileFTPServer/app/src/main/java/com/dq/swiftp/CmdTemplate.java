@@ -22,7 +22,7 @@ package com.dq.swiftp;
 import android.util.Log;
 
 public class CmdTemplate extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdTemplate";
+	private static final String TAG = "FtpCmdTemplate";
 	public static final String message = "TEMPLATE!!"; 
 	
 	public CmdTemplate(SessionThread sessionThread, String input) {

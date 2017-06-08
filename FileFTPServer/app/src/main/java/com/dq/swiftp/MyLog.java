@@ -19,18 +19,21 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 
 package com.dq.swiftp;
 
+
 import android.util.Log;
 
 import com.dq.fileftpserver.FTPServerService;
+import com.dq.fileftpserver.LogUtil;
 
 public class MyLog {
 	protected String tag;
-	
+	private final String TAG= "Ftp_vv";
 	public MyLog(String tag) {
 		this.tag = tag;
 	}
 	
 	public void l(int level, String str, boolean sysOnly) {
+		LogUtil.d(TAG,str);
 		synchronized (MyLog.class) {
 			str = str.trim();
 			// Messages of this severity are handled specially

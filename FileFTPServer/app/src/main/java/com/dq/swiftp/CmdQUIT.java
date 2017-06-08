@@ -22,7 +22,7 @@ package com.dq.swiftp;
 import android.util.Log;
 
 public class CmdQUIT extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdQUIT";
+	private static final String TAG = "FtpCmdQUIT";
     
 	public static final String message = "TEMPLATE!!"; 
 	

@@ -23,7 +23,7 @@ import android.util.Log;
 
 
 public class CmdSTOR extends CmdAbstractStore implements Runnable {
-    private static final String TAG = "FileManager_CmdSTOR";
+	private static final String TAG = "FtpCmdSTOR";
 	protected String input;
 	
 	public CmdSTOR(SessionThread sessionThread, String input) {

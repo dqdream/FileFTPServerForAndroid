@@ -25,7 +25,7 @@ import java.io.IOException;
 import android.util.Log;
 
 public class CmdPWD extends FtpCmd implements Runnable {
-    private static final String TAG = "FileManager_CmdPWD";
+    private static final String TAG = "FtpCmdPWD";
     
     // public static final String message = "TEMPLATE!!";
 

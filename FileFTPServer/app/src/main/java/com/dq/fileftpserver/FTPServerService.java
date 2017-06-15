@@ -20,7 +20,6 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 package com.dq.fileftpserver;
 
 import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
@@ -32,10 +31,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.WifiLock;
-import android.os.Build;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.dq.swiftp.Defaults;
@@ -48,11 +45,15 @@ import com.dq.swiftp.UiUpdater;
 import com.dq.swiftp.Util;
 
 import java.io.IOException;
+import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.NetworkInterface;
 import java.net.ServerSocket;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.List;
 
 
@@ -561,7 +562,22 @@ public class FTPServerService extends Service implements Runnable {
             return false;
         }
     }
-
+    public static InetAddress getLocalIpAddress(){
+        try{
+            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();){
+                NetworkInterface intf = en.nextElement();
+                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();){
+                    InetAddress inetAddress = enumIpAddr.nextElement();
+                    if (inetAddress instanceof Inet4Address && !inetAddress.isLoopbackAddress()){
+                        return inetAddress;
+                    }
+                }
+            }
+        } catch (SocketException ex){
+            LogUtil.e(TAG, ex.toString());
+        }
+        return null;
+    }
     public static void log(int msgLevel, String s) {
         serverLog.add(s);
         int maxSize = Defaults.getServerLogScrollBack();

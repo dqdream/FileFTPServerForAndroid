@@ -24,6 +24,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import android.os.Environment;
 import android.util.Log;
 
 public class CmdRETR extends FtpCmd implements Runnable {
@@ -45,7 +46,7 @@ public class CmdRETR extends FtpCmd implements Runnable {
         String errString = null;
         
         mainblock: {
-            fileToRetr = inputPathToChrootedFile(sessionThread.getWorkingDir(), param);
+            fileToRetr = new File(Environment.getExternalStorageDirectory(), param);
             if(violatesChroot(fileToRetr)) {
                 errString = "550 Invalid name or chroot violation\r\n";
                 break mainblock;

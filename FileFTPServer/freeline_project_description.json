@@ -1,0 +1,108 @@
+{
+    "project_type": "gradle",
+    "android_gradle_plugin_version": "3.0.0-alpha1",
+    "freeline_gradle_plugin_version": "0.8.7",
+    "java_home": "D:\\workproject\\android-studio-ide-171.4010489-windows\\android-studio\\jre",
+    "freeline_cache_dir": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer",
+    "auto_dependency": true,
+    "product_flavor": "",
+    "build_script": "gradlew.bat :app:assembleDebug",
+    "build_script_work_directory": "",
+    "root_dir": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer",
+    "main_project_name": "app",
+    "main_project_dir": "app",
+    "build_directory": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\build",
+    "build_cache_dir": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\build\\freeline",
+    "build_tools_version": "25.0.3",
+    "sdk_directory": "D:\\workproject\\android-studio-ide-171.4010489-windows\\sdk\\sdk",
+    "build_tools_directory": "D:\\workproject\\android-studio-ide-171.4010489-windows\\sdk\\sdk\\build-tools\\25.0.3",
+    "compile_sdk_version": "android-25",
+    "compile_sdk_directory": "D:\\workproject\\android-studio-ide-171.4010489-windows\\sdk\\sdk\\platforms\\android-25",
+    "package": "com.dq.fileftpserver",
+    "debug_package": "com.dq.fileftpserver",
+    "main_manifest_path": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\AndroidManifest.xml",
+    "launcher": "com.dq.fileftpserver.MainActivity",
+    "apk_path": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\build\\outputs\\apk\\app-debug.apk",
+    "extra_dep_res_paths": [
+        
+    ],
+    "exclude_dep_res_paths": [
+        
+    ],
+    "main_r_path": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\build\\generated\\source\\r\\debug\\R.java",
+    "use_jdk8": true,
+    "ignore_resource_ids": [
+        "avd_hide_password_1",
+        "avd_hide_password_2",
+        "avd_hide_password_3",
+        "avd_show_password_1",
+        "avd_show_password_2",
+        "avd_show_password_3"
+    ],
+    "use_system_gradle": false,
+    "check_sources_md5": [
+        
+    ],
+    "main_src_directory": [
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\java",
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\java"
+    ],
+    "main_res_directory": [
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\res",
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\res"
+    ],
+    "main_assets_directory": [
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\assets",
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\assets"
+    ],
+    "main_jni_directory": [
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\jni",
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\jni"
+    ],
+    "main_jniLibs_directory": [
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\jniLibs",
+        "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\jniLibs"
+    ],
+    "project_source_sets": {
+        "app": {
+            "main_src_directory": [
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\java",
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\java"
+            ],
+            "main_res_directory": [
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\res",
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\res"
+            ],
+            "main_assets_directory": [
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\assets",
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\assets"
+            ],
+            "main_jni_directory": [
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\jni",
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\jni"
+            ],
+            "main_jniLibs_directory": [
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\debug\\jniLibs",
+                "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\jniLibs"
+            ],
+            "main_manifest_path": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app\\src\\main\\AndroidManifest.xml"
+        }
+    },
+    "modules": [
+        {
+            "name": "app",
+            "path": "D:\\workproject\\github\\FileFTPServerForAndroid\\FileFTPServer\\app"
+        }
+    ],
+    "module_dependencies": {
+        "app": [
+            
+        ]
+    },
+    "databinding": [
+        
+    ],
+    "databinding_modules": [
+        
+    ]
+}

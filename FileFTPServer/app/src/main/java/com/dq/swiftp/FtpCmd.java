@@ -20,6 +20,7 @@ along with SwiFTP.  If not, see <http://www.gnu.org/licenses/>.
 package com.dq.swiftp;
 
 
+import android.os.Environment;
 import android.util.Log;
 
 import java.io.File;
@@ -163,19 +164,19 @@ public abstract class FtpCmd implements Runnable {
         }
      
         // Gionee <lilg><2015-01-20> modify for CR01620980 begin
-        String internalStoragePath = DefaultStorageManager.getInstance().getStorageMountPath(DefaultStorageManager.TYPE_INTERNAL);
-        String externalStoragePath = DefaultStorageManager.getInstance().getStorageMountPath(DefaultStorageManager.TYPE_SDCARD);
-        if(retString.equals(Defaults.PATH_INTERNAL)) {
-            retString = internalStoragePath.substring(internalStoragePath.lastIndexOf(File.separator)) + File.separator;
-        } else if(retString.startsWith(Defaults.PATH_INTERNAL)) {
-            retString = retString.replace(File.separator + Defaults.STR_INTERNAL, internalStoragePath.substring(internalStoragePath.lastIndexOf(File.separator)));
-        } else if(retString.charAt(0) == '/' && DefaultStorageManager.getInstance().getMountedStorageList().size() == 1 && DefaultStorageManager.getInstance().isStorageMounted(DefaultStorageManager.TYPE_INTERNAL)) {
-            retString = internalStoragePath.substring(internalStoragePath.lastIndexOf(File.separator)) + retString;
-        } else if(retString.equals(Defaults.PATH_EXTERNAL)) {
-            retString = externalStoragePath.substring(externalStoragePath.lastIndexOf(File.separator)) + File.separator;
-        } else if(retString.startsWith(Defaults.PATH_EXTERNAL)) {
-            retString = retString.replace(File.separator + Defaults.STR_EXTERNAL, externalStoragePath.substring(externalStoragePath.lastIndexOf(File.separator)));
-        }
+//        String internalStoragePath = DefaultStorageManager.getInstance().getStorageMountPath(DefaultStorageManager.TYPE_INTERNAL);
+//        String externalStoragePath = DefaultStorageManager.getInstance().getStorageMountPath(DefaultStorageManager.TYPE_SDCARD);
+//        if(retString.equals(Defaults.PATH_INTERNAL)) {
+//            retString = internalStoragePath.substring(internalStoragePath.lastIndexOf(File.separator)) + File.separator;
+//        } else if(retString.startsWith(Defaults.PATH_INTERNAL)) {
+//            retString = retString.replace(File.separator + Defaults.STR_INTERNAL, internalStoragePath.substring(internalStoragePath.lastIndexOf(File.separator)));
+//        } else if(retString.charAt(0) == '/' && DefaultStorageManager.getInstance().getMountedStorageList().size() == 1 && DefaultStorageManager.getInstance().isStorageMounted(DefaultStorageManager.TYPE_INTERNAL)) {
+//            retString = internalStoragePath.substring(internalStoragePath.lastIndexOf(File.separator)) + retString;
+//        } else if(retString.equals(Defaults.PATH_EXTERNAL)) {
+//            retString = externalStoragePath.substring(externalStoragePath.lastIndexOf(File.separator)) + File.separator;
+//        } else if(retString.startsWith(Defaults.PATH_EXTERNAL)) {
+//            retString = retString.replace(File.separator + Defaults.STR_EXTERNAL, externalStoragePath.substring(externalStoragePath.lastIndexOf(File.separator)));
+//        }
         // Gionee <lilg><2015-01-20> modify for CR01620980 end
         
         return retString; 
@@ -189,7 +190,7 @@ public abstract class FtpCmd implements Runnable {
     }
 
     // Gionee <lilg><2014-09-22> modify for CR01375662 begin
-    private static final String mountPoint = "/emulated/0/";
+    private static final String mountPoint = "/emulated/0";
     public static File inputPathToChrootedFile(File existingPrefix, String param) {
         try {
             if(param.charAt(0) == '/') {

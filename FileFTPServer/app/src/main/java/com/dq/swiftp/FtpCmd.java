@@ -192,6 +192,7 @@ public abstract class FtpCmd implements Runnable {
     // Gionee <lilg><2014-09-22> modify for CR01375662 begin
     private static final String mountPoint = "/emulated/0";
     public static File inputPathToChrootedFile(File existingPrefix, String param) {
+
         try {
             if(param.charAt(0) == '/') {
                 // The STOR contained an absolute path
